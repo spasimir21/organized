@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Organized</string>
+    <string name="title_activity_main">Organized</string>
+    <string name="package_name">com.sp.organized</string>
+    <string name="custom_url_scheme">com.sp.organized</string>
+</resources>

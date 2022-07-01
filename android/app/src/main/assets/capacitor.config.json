@@ -1,0 +1,15 @@
+{
+	"appId": "com.sp.organized",
+	"appName": "Organized",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0
+		}
+	},
+	"server": {
+		"url": "http://192.168.31.159:1234",
+		"cleartext": true
+	}
+}

@@ -1,0 +1,39 @@
+{
+  "name": "organized",
+  "version": "0.0.1",
+  "description": "An app to organize your photos.",
+  "scripts": {
+    "serve": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "resources": "cordova-res android && node scripts/resources.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^3.6.0",
+    "@capacitor/app": "^1.1.1",
+    "@capacitor/camera": "^1.3.1",
+    "@capacitor/core": "^3.6.0",
+    "@capacitor/device": "^1.1.2",
+    "@capacitor/dialog": "^1.0.7",
+    "@capacitor/filesystem": "^1.1.0",
+    "@capacitor/share": "^1.1.2",
+    "@capacitor/splash-screen": "^1.2.2",
+    "@capacitor/status-bar": "^1.0.8",
+    "@capacitor/storage": "^1.2.5",
+    "@capacitor/toast": "^1.0.8"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^3.6.0",
+    "cordova-res": "^0.15.4",
+    "parcel": "^2.5.0"
+  },
+  "homepage": "https://github.com/spasimir21/organized#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spasimir21/organized.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spasimir21/organized/issues"
+  },
+  "author": "Spasimir Pavlov",
+  "license": "MIT"
+}

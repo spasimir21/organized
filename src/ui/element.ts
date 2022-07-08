@@ -11,12 +11,12 @@ class UIElement<TKey extends string = any> {
 
   protected readonly elements: Record<TKey, HTMLElement>;
 
-  constructor() {
+  constructor(init: boolean = true) {
     this.element = document.createElement('div');
     this.element.classList.add(...this.getElementClasses());
     this.element.innerHTML = this.getTemplate();
     this.elements = extractElementsWithKeys(this.element);
-    this.init();
+    if (init) this.init();
   }
 
   getElementClass(): string {

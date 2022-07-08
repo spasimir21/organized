@@ -20,6 +20,10 @@ class Sector {
     return this.items[id] ?? null;
   }
 
+  deleteItem(id: string) {
+    delete this.items[id];
+  }
+
   save() {
     return updateSectorItems(this.id, serializeItems(this.items));
   }

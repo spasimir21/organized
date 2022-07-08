@@ -22,6 +22,10 @@ class HeaderUI extends UIElement<'title' | 'addButton'> {
   setTitle(title: string): void {
     this.elements.title.textContent = title;
   }
+
+  setAddButtonVisible(visible: boolean): void {
+    this.elements.addButton.style.display = visible ? null : 'none';
+  }
 }
 
 export { HeaderUI };

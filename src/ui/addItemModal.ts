@@ -26,7 +26,7 @@ class AddItemModalUI extends ModalContentUI<'itemNameInput' | 'addButton' | 'pho
     const onItemTypeSelected = (itemType: ItemType) => {
       itemInfo.type = itemType;
 
-      if (itemType == ItemType.Photo) {
+      if (itemInfo.type == ItemType.Photo) {
         this.elements.listingTypeButton.classList.remove('item-type-icon-selected');
         this.elements.photoTypeButton.classList.add('item-type-icon-selected');
       } else {

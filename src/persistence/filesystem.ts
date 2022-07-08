@@ -17,6 +17,14 @@ async function createSector(id: string) {
   });
 }
 
+async function deleteSector(id: string) {
+  await Filesystem.rmdir({
+    path: id,
+    recursive: true,
+    directory: Directory.Data
+  });
+}
+
 async function readSectorItems(id: string): Promise<SerializedItems> {
   const file = await Filesystem.readFile({
     path: `./${id}/_items.json`,
@@ -36,4 +44,37 @@ async function updateSectorItems(id: string, items: SerializedItems) {
   });
 }
 
-export { getSectorIds, createSector, readSectorItems, updateSectorItems };
+async function savePhotoData(photoId: string, sectorId: string, photoData: string) {
+  await Filesystem.writeFile({
+    data: photoData,
+    path: `./${sectorId}/photos/${photoId}.jpg`,
+    directory: Directory.Data
+  });
+}
+
+async function loadPhotoData(photoId: string, sectorId: string): Promise<string> {
+  const result = await Filesystem.readFile({
+    path: `./${sectorId}/photos/${photoId}.jpg`,
+    directory: Directory.Data
+  });
+
+  return result.data;
+}
+
+async function deletePhotoData(photoId: string, sectorId: string) {
+  await Filesystem.deleteFile({
+    path: `./${sectorId}/photos/${photoId}.jpg`,
+    directory: Directory.Data
+  });
+}
+
+export {
+  getSectorIds,
+  createSector,
+  deleteSector,
+  readSectorItems,
+  updateSectorItems,
+  savePhotoData,
+  loadPhotoData,
+  deletePhotoData
+};

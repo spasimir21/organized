@@ -18,7 +18,7 @@ class ListingItemUI extends UIElement<'image' | 'name'> {
     this.itemId = itemId;
     this.sectorId = sectorId;
 
-    this.item = this.app.persistence.getItem(this.itemId, this.sectorId);
+    this.item = this.app.persistence.getItem(this.itemId, this.sectorId) as Item;
     this.init();
   }
 
@@ -68,7 +68,7 @@ class ListingItemUI extends UIElement<'image' | 'name'> {
         document.body.appendChild(modal.element);
       },
       () => (this.element.style.backgroundColor = 'var(--medium-color)'),
-      () => (this.element.style.backgroundColor = null)
+      () => (this.element.style.backgroundColor = 'none')
     );
   }
 }

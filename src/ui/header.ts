@@ -24,7 +24,7 @@ class HeaderUI extends UIElement<'title' | 'addButton'> {
   }
 
   setAddButtonVisible(visible: boolean): void {
-    this.elements.addButton.style.display = visible ? null : 'none';
+    this.elements.addButton.style.display = visible ? 'block' : 'none';
   }
 }
 

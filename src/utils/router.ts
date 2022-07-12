@@ -7,7 +7,7 @@ class Router<TRoute> {
   private history: TRoute[] = [];
 
   get currentRoute(): TRoute {
-    return this._currentRoute;
+    return this._currentRoute as TRoute;
   }
 
   get canGoBack(): boolean {

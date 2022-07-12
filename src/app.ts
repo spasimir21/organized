@@ -42,7 +42,13 @@ class App {
 
   async init() {
     await this.persistence.init();
-    this.navigateTo({ itemType: ItemType.Listing, itemName: 'Organized', sectorDepth: 0, sectorId: '$root', itemId: '$root' });
+    this.navigateTo({
+      itemType: ItemType.Listing,
+      itemName: 'Organized',
+      sectorDepth: 0,
+      sectorId: '$root',
+      itemId: '$root'
+    });
   }
 
   openAddItemModal(): void {

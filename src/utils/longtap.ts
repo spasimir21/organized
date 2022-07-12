@@ -1,5 +1,10 @@
-function addLongtapListener(element: HTMLElement, listener: () => void, startListener?: () => void, endListener?: () => void) {
-  let timeout = null;
+function addLongtapListener(
+  element: HTMLElement,
+  listener: () => void,
+  startListener?: () => void,
+  endListener?: () => void
+) {
+  let timeout: any = null;
 
   element.addEventListener('touchstart', () => {
     timeout = setTimeout(listener, 1000);

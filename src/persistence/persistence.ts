@@ -85,7 +85,7 @@ class Persistence {
     if (Object.keys(this.sectors[sectorId]).length >= 100 || sectorDepth >= 3) {
       await this.createSector(id);
       const listing = await this.createListing(null, name, id, 0, id);
-      await this.createSectorLink(parentId, name, id, sectorId);
+      await this.createSectorLink(parentId ?? '', name, id, sectorId);
       return listing;
     }
 
@@ -112,6 +112,8 @@ class Persistence {
 
   async deleteItem(parentId: string, itemId: string, sectorId: string) {
     const item = this.sectors[sectorId].getItem(itemId);
+    if (item == null) return;
+
     if (item.type == ItemType.Listing) await this.deleteListing(parentId, itemId, sectorId);
     else if (item.type == ItemType.SectorLink) await this.deleteSectorLink(parentId, itemId, item.location, sectorId);
     else await this.deletePhoto(parentId, itemId, sectorId);

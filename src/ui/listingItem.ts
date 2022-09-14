@@ -5,6 +5,11 @@ import { UIElement } from './element';
 import { App, Route } from '../app';
 import { ModalUI } from './modal';
 
+// @ts-ignore
+import listingIcon from '../icons/listing.png';
+// @ts-ignore
+import photoIcon from '../icons/photo.png';
+
 class ListingItemUI extends UIElement<'image' | 'name'> {
   public readonly item: Item;
 
@@ -35,6 +40,14 @@ class ListingItemUI extends UIElement<'image' | 'name'> {
 
   init() {
     this.elements.name.textContent = this.item.name;
+
+    const image = this.elements.image as HTMLImageElement;
+
+    if (this.item.type == ItemType.Listing) {
+      image.src = listingIcon;
+    } else {
+      image.src = photoIcon;
+    }
 
     this.element.addEventListener('click', () => {
       const newRoute: Route = {

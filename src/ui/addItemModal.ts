@@ -1,6 +1,11 @@
 import { ItemType } from '../persistence/interfaces';
 import { ModalContentUI } from './modal';
 
+// @ts-ignore
+import listingIcon from '../icons/listing.png';
+// @ts-ignore
+import photoIcon from '../icons/photo.png';
+
 class AddItemModalUI extends ModalContentUI<'itemNameInput' | 'addButton' | 'photoTypeButton' | 'listingTypeButton'> {
   getElementClass(): string {
     return 'add-item-modal';
@@ -12,8 +17,12 @@ class AddItemModalUI extends ModalContentUI<'itemNameInput' | 'addButton' | 'pho
       <input key="itemNameInput" type="text" placeholder="Item Name"></input>
       <div class="add-item-modal-bottom">
         <div class="add-item-modal-item-types">
-          <div key="photoTypeButton" class="item-type-icon item-type-icon-selected"></div>
-          <div key="listingTypeButton" class="item-type-icon"></div>
+          <div key="photoTypeButton" class="item-type-icon item-type-icon-selected">
+            <img src="${photoIcon}" />
+          </div>
+          <div key="listingTypeButton" class="item-type-icon">
+            <img src="${listingIcon}" />
+          </div>
         </div>
         <p key="addButton" class="add-button">Add</p>
       </div>
